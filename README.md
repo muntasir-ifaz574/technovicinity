@@ -14,17 +14,17 @@ The relationship and flow of data between the three clean architecture layers is
 
 ```mermaid
 graph TD
-    subgraph Presentation Layer
+    subgraph "Presentation Layer"
         UI[Widget / Screen] -->|Reads / Listens| Riverpod[Riverpod Notifiers]
     end
     
-    subgraph Domain Layer (Pure Dart)
+    subgraph "Domain Layer (Pure Dart)"
         Riverpod -->|Invokes| UseCase[Use Cases]
         UseCase -->|Calls| RepoInterface[Repository Interfaces]
         RepoInterface -->|Returns| Entities[Entities]
     end
     
-    subgraph Data Layer
+    subgraph "Data Layer"
         RepoInterface -.->|Implemented by| RepoImpl[Repository Implementations]
         RepoImpl -->|Queries| RemoteDS[Remote Data Source]
         RepoImpl -->|Queries| LocalDS[Local Data Source]
