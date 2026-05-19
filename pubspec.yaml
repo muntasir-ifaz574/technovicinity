@@ -1,0 +1,82 @@
+name: technovicinity
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+ # for making http requests
+  dio: ^5.9.0
+
+  # for local storage
+  shared_preferences: ^2.5.3
+
+  # functional programming package ( It facilitates writing cleaner, safer, 
+  # and more expressive code, particularly in handling errors, null values, and data validation)
+  dartz: ^0.10.1
+
+  # compare between previous value and current value
+  equatable: ^2.0.7
+
+  # dependency injector
+  get_it: ^9.0.5
+
+  # route or navigation
+  auto_route: ^10.2.2
+
+  # state management
+  flutter_riverpod: ^3.0.3
+
+  # the annotation package containing @riverpod
+  riverpod_annotation: ^3.0.3
+  
+  # smooth indicator
+  smooth_page_indicator: ^1.2.1
+
+  # openstreetmap
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.0
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+  # riverpod code generator
+  riverpod_generator:
+
+  # auto route generator
+  auto_route_generator: ^10.2.6
+
+  # a tool for running code generators
+  build_runner: ^2.7.1
+
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+
+  
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
