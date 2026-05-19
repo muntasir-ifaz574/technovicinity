@@ -20,7 +20,7 @@ final class AuthProvider
         argument: null,
         retry: null,
         name: r'authProvider',
-        isAutoDispose: true,
+        isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
@@ -33,7 +33,7 @@ final class AuthProvider
   Auth create() => Auth();
 }
 
-String _$authHash() => r'23f03111cc5882eafc1b12762963576e320cf23d';
+String _$authHash() => r'881555c8645196bf45b4bfdb8a9b88257c70adfa';
 
 abstract class _$Auth extends $AsyncNotifier<Either<Failure, dynamic>> {
   FutureOr<Either<Failure, dynamic>> build();

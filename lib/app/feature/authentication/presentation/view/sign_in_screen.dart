@@ -184,15 +184,6 @@ class _SignInScreenState extends ConsumerState<SignInScreen> with SingleTickerPr
                           letterSpacing: 2,
                         ),
                       ),
-                      const SizedBox(height: 6),
-                      const Text(
-                        'Travel & Logistics Portal',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white70,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
                       SizedBox(height: context.height * 0.06),
                       
                       // Login Card

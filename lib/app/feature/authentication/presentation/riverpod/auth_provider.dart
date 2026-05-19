@@ -10,7 +10,7 @@ import '../../domain/use_case/logout_use_case.dart';
 
 part 'auth_provider.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class Auth extends _$Auth {
   @override
   Future<Either<Failure, dynamic>> build() async {
@@ -32,7 +32,9 @@ class Auth extends _$Auth {
       ),
     );
 
-    state = AsyncData(result);
+    if (ref.mounted) {
+      state = AsyncData(result);
+    }
   }
 
   /// 🔹 Sign Up Request
@@ -54,7 +56,9 @@ class Auth extends _$Auth {
       ),
     );
 
-    state = AsyncData(result);
+    if (ref.mounted) {
+      state = AsyncData(result);
+    }
   }
 
   /// 🔹 Logout Request
@@ -64,6 +68,8 @@ class Auth extends _$Auth {
     final logout = sl<LogoutUseCase>();
     final result = await logout(NoParams());
 
-    state = AsyncData(result);
+    if (ref.mounted) {
+      state = AsyncData(result);
+    }
   }
 }
