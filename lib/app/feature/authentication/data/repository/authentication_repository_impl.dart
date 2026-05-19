@@ -79,6 +79,8 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, void>> logout() async {
     try {
+      emailController.clear();
+      passwordController.clear();
       await authRemoteDataSource.logout();
       await localData.setLoginStatus(false);
       await localData.setInStartScreenStatus(false);

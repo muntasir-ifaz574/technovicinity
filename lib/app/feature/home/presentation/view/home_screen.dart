@@ -33,23 +33,23 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   void _handleLogout() {
     showDialog(
       context: context,
-      builder: (BuildContext context) {
+      builder: (BuildContext dialogContext) {
         return AlertDialog(
           title: const Text('Confirm Logout'),
           content: const Text('Are you sure you want to log out of your session?'),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           actions: [
             TextButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(dialogContext),
               child: const Text('Cancel', style: TextStyle(color: Colors.grey)),
             ),
             TextButton(
               onPressed: () async {
-                Navigator.pop(context); // Close dialog
+                Navigator.pop(dialogContext); // Close dialog
                 
                 await ref.read(authProvider.notifier).logoutReq();
                 
-                if (context.mounted) {
+                if (mounted) {
                   context.router.replace(const SignInRoute());
                   
                   ScaffoldMessenger.of(context).showSnackBar(
